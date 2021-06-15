@@ -1,0 +1,60 @@
+{
+    "name": "Tianguiztli",
+    "short_name": "Tianguiztli",
+    "theme_color": "#c29800",
+    "background_color": "#c29800",
+    "display": "standalone",
+    "scope": "./",
+    "start_url": "./",
+    "icons": [{
+            "src": "assets/img-app/icon_1024.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/img-app/icon_512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/img-app/icon_384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/img-app/icon_256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/img-app/icon_192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/img-app/icon_144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/img-app/icon_128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/img-app/icon_96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/img-app/icon_64.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/img-app/icon_32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        }
+    ]
+}

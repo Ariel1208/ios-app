@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar color="tian">
+        <ion-buttons slot="start">
+            <ion-menu-button autoHide="false"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Pagos y servicios</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-list>
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="../../assets/img-app/icon_1024.png">
+                    </ion-avatar>
+                    <ion-label>
+                        <h2>Servicio de comedot</h2>
+                        <h3>Costo semanal: $50 pesos</h3>
+                    </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-segment color="danger" value="pagos" (ionChange)="segmentChanged($event)">
+                        <ion-segment-button value="pagos">
+                            <ion-label>Pagos</ion-label>
+                        </ion-segment-button>
+                        <ion-segment-button value="adeudos">
+                            <ion-label>Adeudos</ion-label>
+                        </ion-segment-button>
+                    </ion-segment>
+                </ion-item>
+            </ion-list>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-list>
+                <ion-list-header>
+                    Registros encontrados
+                </ion-list-header>
+                <ion-item *ngFor="let e of arrayDatos">
+                    <ion-avatar slot="start">
+                        <img src="../../assets/img-app/cash.png">
+                    </ion-avatar>
+                    <ion-label>
+                        <h2>Fecha: {{e.fecha_pago}}</h2>
+                        <h3>Monto: ${{e.total}}</h3>
+                        <p *ngIf="!e.dias">Dias : 1</p>
+                        <p *ngIf="e.dias">Dias pagados: {{e.dias}}</p>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

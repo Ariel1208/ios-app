@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Bienvenido</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-content>
+        <div id="header" class="ion-padding-top">
+            <img src="../../assets/img-app/icon_1024.jpeg" />
+            <label for=""><h2>Comercializadora Tianguiztli</h2></label>
+        </div>
+
+        <form id="form">
+            <ion-item class="ion-margin-bottom">
+                <ion-label position="">Correo empresarial:</ion-label>
+                <ion-input type="text" #email></ion-input>
+            </ion-item>
+            <ion-item class="ion-margin-bottom">
+                <ion-label position="">Contraseña:</ion-label>
+                <ion-input type="text" #pass></ion-input>
+            </ion-item>
+
+            <ion-button color="tian" expand="block" shape="round" (click)="login(email,pass)">Iniciar sesión</ion-button>
+        </form>
+    </ion-content>
+
+</ion-content>

@@ -1,0 +1,19 @@
+* {
+    font-family: 'Anton', sans-serif;
+}
+
+ion-header,
+ion-toolbar {
+    background-color: #ee701e;
+}
+
+ion-content {
+    background: rgba(43, 90, 148, 1);
+    ion-card {
+        color: #2d334a;
+        width: 100%;
+        border-radius: 14px;
+        padding: 14px;
+        background: #fffffe;
+    }
+}
