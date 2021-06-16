@@ -27,13 +27,13 @@ ion-header {
     ion-item {
         h3 {
             color: #fff;
-            font-weight: 700;
+            font-weight: 300;
             font-size: 15px;
             letter-spacing: 2px
         }
         p {
             color: #fff;
-            font-weight: 500;
+            font-weight: 200;
             font-size: 15px;
             letter-spacing: 2px
         }
@@ -57,6 +57,14 @@ ion-content {
         border-radius: 14px;
         padding: 14px;
         background: #fffffe;
+        ion-card-title {
+            font-weight: 300;
+            font-size: 16px;
+        }
+        ion-card-subtitle {
+            font-weight: 30;
+            font-size: 14px;
+        }
         .main {
             width: 80px;
             height: 80px;
@@ -90,7 +98,7 @@ ion-content {
             ion-label {
                 padding: 6px 0;
                 h4 {
-                    font-weight: 600;
+                    font-weight: 300;
                     font-size: 16px;
                 }
                 h6 {

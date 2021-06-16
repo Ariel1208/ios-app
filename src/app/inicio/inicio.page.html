@@ -6,13 +6,13 @@
         <ion-title>Inicio</ion-title>
 
         <ion-buttons slot="end">
-            <ion-button (click)="presentActionSheet()" class="bordered " fill="solid " color="light ">
+            <ion-button (click)="presentActionSheet()" class="bordered " fill="solid " color="light">
                 <ion-icon color="" name="settings-sharp"></ion-icon>
             </ion-button>
         </ion-buttons>
     </ion-toolbar>
 
-    <ion-item lines="none">
+    <ion-item button (click)="actualizarPlatillos()" lines="none">
 
         <ion-avatar slot="start">
             <img src="../../assets/img-app/icon_1024.jpeg ">
@@ -21,15 +21,17 @@
             <p>Comercializadora Tianguiztli</p>
             <h3>te desea un buen dia</h3>
         </ion-label>
-
+        <ion-button color="light" fill="clear">
+            <ion-spinner name="bubbles" color="dark" *ngIf="searchNotifications == true"></ion-spinner>
+        </ion-button>
     </ion-item>
 
 </ion-header>
 
 <ion-content>
 
-    <div class="slides ion-margin-bottom ">
-        <ion-slides [options]="slidesOptions ">
+    <div class="slides ion-margin-bottom">
+        <ion-slides [options]="slidesOptions" pager="ture">
             <ion-slide *ngIf="arrayPlatillosL.length> 0">
                 <!-- <ion-fab horizontal="end" vertical="bottom" slot="fixed">
                     <ion-fab-button color="ligth">
@@ -55,7 +57,7 @@
                     <ion-card-content class="ion-text-left" *ngFor="let e of arrayPlatillosL">
                         <ion-card-subtitle class="ion-text-left" *ngIf="e.tipo == 1">Desayuno</ion-card-subtitle>
                         <ion-card-subtitle class="ion-text-left" *ngIf="e.tipo == 2">Comida</ion-card-subtitle>
-                        <ion-card-title class="ion-margin-bottom ">
+                        <ion-card-title class="">
                             {{e.nombre_platillo}}
                         </ion-card-title>
                     </ion-card-content>
@@ -75,7 +77,7 @@
                         </ion-fab-button>
                     </ion-fab-list>
                 </ion-fab>-->
-                <ion-card>
+                <ion-card selected>
                     <ion-card-header>
                         <ion-card-title>Martes</ion-card-title>
                         <ion-card-subtitle>{{arrayPlatillosM[0].fecha_seguimiento}}</ion-card-subtitle>

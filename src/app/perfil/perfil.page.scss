@@ -2,12 +2,10 @@
     font-family: 'Anton', sans-serif;
 }
 
+ion-header,
 ion-toolbar {
-    --background: #ee701e;
+    background-color: #ee701e;
     letter-spacing: 4px;
-    ion-button {
-        font-size: 17px;
-    }
 }
 
 ion-content {

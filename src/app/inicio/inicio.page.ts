@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetController, MenuController } from '@ionic/angular';
+import { ActionSheetController, MenuController, IonSlides } from '@ionic/angular';
 import { ApiResponseService } from '../service/api-response.service';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-inicio',
@@ -32,6 +31,11 @@ export class InicioPage implements OnInit {
     this.validarSesion();
   }
 
+  validarSlide(){
+    const fecha = new Date();  
+    this.slidesOptions.initialSlide = fecha.getDay()-1; 
+    console.log( this.slidesOptions.initialSlide)
+  }
   
   validarSesion(){
     if(!window.localStorage.getItem("nombre")){
@@ -41,15 +45,19 @@ export class InicioPage implements OnInit {
 
 
   getPlatillosSemanales(){
+    this.validarSlide();
+    
     this.servicio.getPlatillos().then(res =>{
+      
       var platillos = res[0];
       const dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
 
       for(let e of platillos){
         const numeroDia = new Date(e.fecha_seguimiento).getDay();
-        console.log();
         e.fecha_seguimiento = new Date(e.fecha_seguimiento).toDateString();
         const nombreDia = dias[numeroDia];
+
+        
 
         if(nombreDia == 'Lunes'){
           this.arrayPlatillosL.push(e);
@@ -68,13 +76,15 @@ export class InicioPage implements OnInit {
         };
       }
       this.arrays.push(this.arrayPlatillosL,this.arrayPlatillosM,this.arrayPlatillosMi,this.arrayPlatillosJ,this.arrayPlatillosV)
-      console.log(this.arrays);
       
     })
+
+
   }
   
   slidesOptions = {
-    slidesPerView: 1
+    slidesPerView: 1,
+    initialSlide: null
   }
 
   async presentActionSheet() {
@@ -129,6 +139,17 @@ export class InicioPage implements OnInit {
       }, 2000)
     })
   }  
+
+
+  actualizarPlatillos(){
+    this.arrayPlatillosL =[];
+    this.arrayPlatillosM =[];
+    this.arrayPlatillosMi =[];
+    this.arrayPlatillosJ =[];
+    this.arrayPlatillosV =[];
+    this.arrays =[];
+    this.getPlatillosSemanales();
+  }
 
  
 }
