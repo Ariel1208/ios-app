@@ -111,5 +111,16 @@ export class ApiResponseService {
     });
   }
 
+  getNotificaciones(){
+    var newUrl = this.url+ 'obtenerNotificacionUsuario/'+window.localStorage.getItem('id');
+    return new Promise((resolve, reject):void =>{
+      this.http.get(newUrl).subscribe(data =>{
+          resolve (data);
+      },error=>{
+        if(error) throw error;
+      });
+    });
+  }
+
   
 }

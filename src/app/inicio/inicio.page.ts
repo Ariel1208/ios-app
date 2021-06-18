@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActionSheetController, MenuController, IonSlides } from '@ionic/angular';
+import { ActionSheetController, MenuController } from '@ionic/angular';
 import { ApiResponseService } from '../service/api-response.service';
 import { Router } from '@angular/router';
 
@@ -22,13 +22,15 @@ export class InicioPage implements OnInit {
     private menu:MenuController,
     private servicio:ApiResponseService,
     public actionSheetController: ActionSheetController,
-    private router: Router
+    private router: Router,
+    
     ) { }
 
   ngOnInit() {
     this.menu.enable(true);
     this.getPlatillosSemanales();
     this.validarSesion();
+    this.verNotificaciones();
   }
 
   validarSlide(){
@@ -149,6 +151,24 @@ export class InicioPage implements OnInit {
     this.arrayPlatillosV =[];
     this.arrays =[];
     this.getPlatillosSemanales();
+  }
+
+  verNotificaciones(){
+
+    setInterval(()=>{
+      this.servicio.getNotificaciones().then(res=>{
+
+        var data = Object.values(res.valueOf());
+        console.log(data.length);
+        
+       
+        
+        
+      })
+    },10000000);
+
+    
+    
   }
 
  
