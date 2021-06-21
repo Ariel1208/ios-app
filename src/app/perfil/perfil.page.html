@@ -5,10 +5,9 @@
         </ion-buttons>
         <ion-title>Mi perfil</ion-title>
         <ion-buttons slot="end">
-            <input type="file" id="pwaphoto" #pwaphoto accept="image/x-png,image/jpeg">
-            <!--  <ion-button (click)="presentActionSheet()" class="bordered" fill="solid" color="tian">
+            <ion-button (click)="presentActionSheet()" class="bordered" fill="solid" color="tian">
                 <ion-icon color="" name="settings-sharp"></ion-icon>
-            </ion-button>-->
+            </ion-button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
@@ -22,7 +21,8 @@
             <ion-label position="floating">Correo empresarial:</ion-label>
             <ion-input type="text" value="{{email}}" disabled></ion-input>
         </ion-item>
-
     </form>
+
+    <input type="file" id="pwaPhoto" style="display: none;" #pwaphoto accept="image/x-png,image/jpeg" (change)="cambiarFoto($event)">
 
 </ion-content>

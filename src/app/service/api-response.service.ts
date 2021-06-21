@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class ApiResponseService {
 
   url = 'https://miapp-tianguiztli.herokuapp.com/';
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient,private storage: AngularFireStorage) { }
 
 
   getUsers(){
@@ -122,5 +123,22 @@ export class ApiResponseService {
     });
   }
 
-  
+  subirImagen(data){
+    var newUrl = this.url+ 'subirImgNueva/'+window.localStorage.getItem('id');
+    return new Promise((resolve, reject) =>{
+      this.http.post(newUrl,data).subscribe(data =>{
+          resolve (data);
+      },error=>{
+        if(error) throw error;
+      });
+    });
+  }  
+
+  public tareaCloudStorage(nombreArchivo: string, datos: any) {
+    return this.storage.upload(nombreArchivo, datos);
+  }
+
+  public referenciaCloudStorage(nombreArchivo: string) {
+    return this.storage.ref(nombreArchivo);
+  }
 }

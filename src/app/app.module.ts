@@ -8,10 +8,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 
 //firebase
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { environment } from './../environments/environment';
+import { firebase } from './../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +23,8 @@ import { environment } from '../environments/environment';
     IonicModule.forRoot(),
     AppRoutingModule, 
     HttpClientModule, 
+    AngularFireModule.initializeApp(firebase.firebaseConfig),
+    AngularFireStorageModule,
     ServiceWorkerModule.register('ngsw-worker.js',
      {
   enabled: environment.production,

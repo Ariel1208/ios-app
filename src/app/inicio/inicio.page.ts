@@ -22,8 +22,7 @@ export class InicioPage implements OnInit {
     private menu:MenuController,
     private servicio:ApiResponseService,
     public actionSheetController: ActionSheetController,
-    private router: Router,
-    
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -154,22 +153,14 @@ export class InicioPage implements OnInit {
   }
 
   verNotificaciones(){
-
     setInterval(()=>{
       this.servicio.getNotificaciones().then(res=>{
-
         var data = Object.values(res.valueOf());
         console.log(data.length);
-        
-       
-        
-        
       })
     },10000000);
-
-    
-    
   }
 
+ 
  
 }

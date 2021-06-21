@@ -1,6 +1,7 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
-
+import { ApiResponseService } from '../service/api-response.service';
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.page.html',
@@ -9,12 +10,15 @@ import { ActionSheetController } from '@ionic/angular';
 export class PerfilPage implements OnInit {
 
   constructor(
-    private actionSheetController:ActionSheetController
+    private actionSheetController:ActionSheetController,
+    private service: ApiResponseService
   ) { }
 
   public img="";
+  public newImg="";
   public nombre="";
   public email ="";
+  uploadFiles:Array<File>;
   
   ngOnInit() {
     this.datos();
@@ -36,7 +40,8 @@ export class PerfilPage implements OnInit {
         text: 'Cambiar foto de perfil',
         icon: 'camera',
         handler: () => {
-          
+          const page = document.getElementById("pwaPhoto");
+          page.click();
         }
       }/*, {
         text: 'Buscar platillos',
@@ -70,4 +75,26 @@ export class PerfilPage implements OnInit {
     const { role } = await actionSheet.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
   }
+
+  cambiarFoto(e){
+    this.uploadFiles = e.target.files;
+    console.log(this.uploadFiles);
+    let formData = new FormData();
+  
+
+    for(let i = 0; i<this.uploadFiles.length; i++){
+    console.log( this.uploadFiles[i].name);
+    formData.append("uploads", this.uploadFiles[i],this.uploadFiles[i].name);
+    }
+    let referencia =this.service.referenciaCloudStorage(this.uploadFiles[0].name)
+    this.service.tareaCloudStorage(this.uploadFiles[0].name,formData.get('uploads')).then(res =>{
+      console.log(res);
+    })
+    referencia.getDownloadURL().subscribe((URL) => {
+      this.img=URL;
+      
+    });
+  }
+
+
 }
