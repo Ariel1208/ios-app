@@ -123,8 +123,23 @@ export class ApiResponseService {
     });
   }
 
-  subirImagen(data){
-    var newUrl = this.url+ 'subirImgNueva/'+window.localStorage.getItem('id');
+
+  public tareaCloudStorage(nombreArchivo: string, datos: any) {
+    return this.storage.upload(nombreArchivo, datos);
+  }
+
+  public referenciaCloudStorage(nombreArchivo: string) {
+    var url = this.storage.ref(nombreArchivo);
+    
+    return url;
+
+  }
+
+  public cambiarUrlImgUsuario(url){
+    var data ={
+      url:url
+    }
+    var newUrl = this.url+ 'CambiarUrlImg/'+window.localStorage.getItem('id');
     return new Promise((resolve, reject) =>{
       this.http.post(newUrl,data).subscribe(data =>{
           resolve (data);
@@ -132,13 +147,5 @@ export class ApiResponseService {
         if(error) throw error;
       });
     });
-  }  
-
-  public tareaCloudStorage(nombreArchivo: string, datos: any) {
-    return this.storage.upload(nombreArchivo, datos);
-  }
-
-  public referenciaCloudStorage(nombreArchivo: string) {
-    return this.storage.ref(nombreArchivo);
   }
 }

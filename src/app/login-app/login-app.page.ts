@@ -45,6 +45,8 @@ export class LoginAppPage implements OnInit {
         console.log(cadena);
         if(cadena[0]=='sin'){
           img="https://pruebas.tianguiztli.com/check/imagenesUsuarios/anonimo.png";
+        }else if(cadena[0]=='https:'){
+          img = img;
         }else{
           img= 'https://pruebas.tianguiztli.com/check/'+cadena[1]+'/'+cadena[2]+'/'+cadena[3];
         }
