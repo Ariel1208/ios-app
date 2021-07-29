@@ -1,37 +1,29 @@
-<ion-header class="ion-no-border">
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-menu-button color="" menuId="custom-menu" autoHide="false"></ion-menu-button>
-        </ion-buttons>
-        <ion-title>Inicio</ion-title>
-
-        <ion-buttons slot="end">
-            <ion-button (click)="presentActionSheet()" class="bordered " fill="solid " color="light">
-                <ion-icon color="" name="settings-sharp"></ion-icon>
-            </ion-button>
-        </ion-buttons>
-    </ion-toolbar>
-
-    <ion-item button (click)="actualizarPlatillos()" lines="none">
-
-        <ion-avatar slot="start">
-            <img src="../../assets/img-app/icon_1024.jpeg ">
-        </ion-avatar>
-        <ion-label>
-            <p>Comercializadora Tianguiztli</p>
-            <h3>te desea un buen dia</h3>
-        </ion-label>
-        <ion-button color="light" fill="clear">
-            <ion-spinner name="bubbles" color="dark" *ngIf="searchNotifications == true"></ion-spinner>
-        </ion-button>
-    </ion-item>
-
-</ion-header>
 
 <ion-content>
+    <ion-header class="ion-no-border">
+        <ion-toolbar>
+            <ion-buttons  slot="start">
+                <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+            <ion-buttons slot="end">
+                <ion-button>
+                    <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+    <div class="about-header">
+        <!-- Instead of loading an image each time the select changes, use opacity to transition them -->
+        <div class="about-image jumbtron" ></div>
+    </div>
+    <div class="title-page">
+        <label for="">Platillos de la semana</label>
+    </div>
+    <div class="slides">
+       
 
-    <div class="slides ion-margin-bottom">
         <ion-slides [options]="slidesOptions" pager="ture">
+
             <ion-slide *ngIf="arrayPlatillosL.length> 0">
                 <!-- <ion-fab horizontal="end" vertical="bottom" slot="fixed">
                     <ion-fab-button color="ligth">
@@ -77,7 +69,7 @@
                         </ion-fab-button>
                     </ion-fab-list>
                 </ion-fab>-->
-                <ion-card selected>
+                <ion-card >
                     <ion-card-header>
                         <ion-card-title>Martes</ion-card-title>
                         <ion-card-subtitle>{{arrayPlatillosM[0].fecha_seguimiento}}</ion-card-subtitle>
@@ -95,19 +87,19 @@
                 </ion-card>
             </ion-slide>
             <ion-slide *ngIf="arrayPlatillosMi.length > 0">
-                <!-- <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+                <ion-fab horizontal="end" vertical="bottom" slot="fixed">
                     <ion-fab-button color="ligth">
                         <ion-icon md="add" ios="chevron-up-circle-outline"></ion-icon>
                     </ion-fab-button>
                     <ion-fab-list side="top">
-                        <ion-fab-button color="light" color="danger">
+                        <ion-fab-button (click)="likeDishes(arrayPlatillosMi[0].id_menu,'down')" color="danger">
                             <ion-icon name="thumbs-down"></ion-icon>
                         </ion-fab-button>
-                        <ion-fab-button color="light" color="secondary">
+                        <ion-fab-button (click)="likeDishes(arrayPlatillosMi[0].id_menu,'up')" color="secondary">
                             <ion-icon name="thumbs-up"></ion-icon>
                         </ion-fab-button>
                     </ion-fab-list>
-                </ion-fab>-->
+                </ion-fab>
                 <ion-card>
                     <ion-card-header>
                         <ion-card-title>Miercoles</ion-card-title>
@@ -188,37 +180,6 @@
                 </ion-card>
             </ion-slide>
         </ion-slides>
-    </div>
-
-    <div class="container">
-
-        <h2>Alertas</h2>
-
-        <ion-item lines="none" button (click)="buscarNotificaciones()">
-            <ion-grid>
-                <ion-row class="ion-align-items-center ">
-                    <ion-col size="3 ">
-                        <ion-button color="light" fill="clear">
-                            <ion-icon color="dark" slot="icon-only" name="notifications"></ion-icon>
-                        </ion-button>
-                    </ion-col>
-                    <ion-col size="7 ">
-                        <ion-label>
-                            <h4 class="ion-text-wrap">Sin notificaciones por el momento</h4>
-                            <h6></h6>
-                        </ion-label>
-                    </ion-col>
-                    <ion-col size="2">
-                        <ion-button color="light" fill="clear">
-                            <ion-spinner name="bubbles" color="dark" *ngIf="searchNotifications == true"></ion-spinner>
-                        </ion-button>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-        </ion-item>
-
-
 
     </div>
-
 </ion-content>

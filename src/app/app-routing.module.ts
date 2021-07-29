@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'login-app',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'login-app',
@@ -13,7 +13,8 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule),
+   
   },
   {
     path: 'pagos-servicio',
@@ -26,7 +27,26 @@ const routes: Routes = [
   {
     path: 'perfil',
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'app',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },  {
+    path: 'buzon-quejas',
+    loadChildren: () => import('./buzon-quejas/buzon-quejas.module').then( m => m.BuzonQuejasPageModule)
+  },
+  {
+    path: 'salud-empleado',
+    loadChildren: () => import('./salud-empleado/salud-empleado.module').then( m => m.SaludEmpleadoPageModule)
+  },
+  {
+    path: 'informacion-empresa',
+    loadChildren: () => import('./informacion-empresa/informacion-empresa.module').then( m => m.InformacionEmpresaPageModule)
   }
+
+
+
+
 ];
 
 @NgModule({

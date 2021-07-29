@@ -161,6 +161,13 @@ export class InicioPage implements OnInit {
     },10000000);
   }
 
+  likeDishes(id,tipo){
+    if(tipo == 'down'){
+      alert("DISLIKE: "+id);
+    }else if(tipo == 'up'){
+      alert("LIKE: "+id);
+    }
+  }
  
  
 }

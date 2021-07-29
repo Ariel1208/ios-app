@@ -56,7 +56,7 @@ export class LoginAppPage implements OnInit {
           window.localStorage.setItem("nombre",res['nombre']); 
           window.localStorage.setItem("mail",res['correo']); 
           window.localStorage.setItem("img",img); 
-          this.router.navigate(['/inicio']);
+          this.router.navigate(['/app/tabs/inicio']);
         })
       }else{
         this.presentToast()

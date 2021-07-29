@@ -14,9 +14,9 @@ export class AppComponent {
   public mail:string;
 
   public appPages = [
-    { title: 'Inicio', url: '/inicio', icon: 'home' },
-    { title: 'Pagos', url: '/pagos-servicio', icon: 'cash' },
-    { title: 'Encuestas', url: '/encuestas', icon: 'checkbox' },
+    { title: 'Inicio', url: '/app/tabs/inicio', icon: 'home' },
+    { title: 'Mi salud', url: 'salud-empleado', icon: 'fitness' },
+    { title: 'Buzon de quejas', url: 'buzon-quejas', icon: 'recording' },
   ];
 
 

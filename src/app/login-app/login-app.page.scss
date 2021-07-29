@@ -1,57 +1,51 @@
 * {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Righteous', cursive;
 }
 
-ion-toolbar {
-    --background: #ee701e;
-    letter-spacing: 4px;
-    color: #eff0f3;
-    ion-button {
-        font-size: 17px;
-    }
-}
+
 
 ion-content {
-    --background: #eff0f3;
+    --background: #E8F0F2;
     #header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        h1 {
-            font-weight: 700;
-            font-size: 26px;
-            color: #010100;
-            margin-bottom: 15%;
+        h2 {
+            font-weight: 800;
+            font-size: 20px;
+            color: #141212;
+            margin-bottom: 5%;
         }
         img {
-            width: 155px;
-            height: 155px;
-            border-radius: 25%;
-            border: 3px solid #000000;
+            width: 205px;
+            height: 205px;
         }
     }
     #form {
-        margin-top: 15%;
+        margin-top: 10%;
         padding-left: 30px;
         padding-right: 30px;
         ion-button {
-            background-color: #ee701e;
+            background-color: #053742;
             margin-top: 35px;
             height: 48px;
             font-size: 18px;
             text-transform: initial;
-            border-radius: 50px;
+            border-radius: 10px;
             box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.05);
             --box-shadow: none;
         }
         ion-item {
+            border-radius: 10px;
             ion-label {
-                font-family: 'Anton', sans-serif;
+                font-family: 'Righteous', cursive;
+
                 font-size: 15px;
             }
             ion-input {
-                letter-spacing: 3px;
-                color: #ee701e;
+    font-family: 'Righteous', cursive;
+
+                color: #000000;
             }
         }
     }

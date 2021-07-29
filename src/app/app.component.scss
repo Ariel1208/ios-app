@@ -1,31 +1,28 @@
 * {
-    color: rgb(0, 0, 0);
-    font-family: 'Anton', sans-serif;
+  font-family: 'Righteous', cursive;
 }
 
 ion-menu ion-content {
     * {
         color: rgb(0, 0, 0);
-        font-family: 'Anton', sans-serif;
+        font-family: 'Righteous', cursive;
     }
     letter-spacing: 0.5px;
-    --background: linear-gradient(90deg, #ee701e 0%, #ee701e 100%);
+    --background: linear-gradient(90deg, #053742 0%, #053742 100%);
     .main-header {
-        height: 30vh;
+        height: 35vh;
         width: 120%;
-        background: linear-gradient(90deg, #eff0f3 0%, #eff0f3 35%, #eff0f3 100%);
+        background: linear-gradient(90deg, #E8F0F2 0%, #E8F0F2 35%, #E8F0F2 100%);
         box-shadow: 0 4px 10px var(rgb(5, 4, 4));
         border-radius: 0 0 50% 50%;
         margin-left: -4.5vh;
         div {
             //  transform: translateY(3vh);
             ion-avatar {
-                width: 15vh;
-                height: 15vh;
+                width: 19vh;
+                height: 19vh;
                 background: var(--ion-color-white);
                 margin-bottom: 10px;
-                border: 1px solid #000000;
-                border-radius: 20px !important;
             }
             ion-label {
                 font-size: 1rem;
@@ -37,13 +34,23 @@ ion-menu ion-content {
         }
     }
     .menu-items {
-        padding-left: 20px;
+        padding-left: 10px;
+        ion-item {
+            ion-icon {
+                color: #bdbdbd;
+            }
+            --background: #ffffff;
+            //  border-left: 3px solid #ffffff;
+            ion-label {
+                color: #c9c9c9;
+            }
+        }
         ion-item.selected {
             ion-icon {
                 color: #fffdf8;
             }
             --background: #ffffff;
-            border-left: 5px solid #ffffff;
+            border-left: 3px solid #ffffff;
             ion-label {
                 color: #ffffff;
             }

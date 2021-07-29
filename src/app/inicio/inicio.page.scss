@@ -1,17 +1,65 @@
 * {
-    font-family: 'Anton', sans-serif;
+    font-family: 'Righteous', cursive;
 }
 
+ion-toolbar {
+    position: absolute;
+  
+    top: 0;
+    left: 0;
+    right: 0;
+  
+    --background: transparent;
+    --color: white;
+  }
+  
+  ion-toolbar ion-button,
+  ion-toolbar ion-back-button,
+  ion-toolbar ion-menu-button {
+    --color: white;
+  }
+  
+
+
+.about-header {
+    position: relative;
+  
+    width: 100%;
+    height: 30%;
+  }
+  
+  .about-header .about-image {
+    position: absolute;
+  
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+    opacity: 0;
+  
+    transition: opacity 500ms ease-in-out;
+  }
+  
+.about-header .jumbtron {
+    background-image: url(../../assets/img-app/TIANGUIZTLI.png);
+    opacity: 1;
+  }
+
 ion-header {
-    ion-toolbar {
-        --background: linear-gradient(90deg, #fff 0%, #fff 100%);
-        ion-icon {
-            color: #000;
-        }
-        ion-menu-button {
-            color: #000;
-        }
+ 
+    ion-toolbar ion-button,
+    ion-toolbar ion-back-button,
+    ion-toolbar ion-menu-button {
+        --color: rgb(19, 18, 18);
     }
+
+    
+        
     ion-item {
         --background: linear-gradient(90deg, #ee701e 0%, #ee701e 100%);
         background: linear-gradient(90deg, #eff0f3 0%, #eff0f3 100%);
@@ -19,6 +67,7 @@ ion-header {
         // --border-radius: 0 0 10px 10px;
     }
     ion-toolbar {
+        color: rgb(255, 255, 255);
         .bordered {
             --border-radius: 30px;
             --box-shadow: 5px 5px 10px #fffffe, -5px -5px 10px #fffffe;
@@ -45,14 +94,26 @@ ion-header {
 }
 
 ion-content {
-    --background: linear-gradient(90deg, rgba(188, 206, 251, 1) 0%, rgba(188, 206, 251, 1) 35%, rgba(188, 206, 251, 1) 100%);
+    --background: #D8E3E7;
+
+    .title-page{
+        background-color: #132C33;
+        text-align: center;
+        color: white;
+        label{
+            margin-top: 10px;
+            font-weight: 200;
+            font-size: 30px;
+        }
+    }
     .slides {
-        background: #eff0f3;
-        padding: 4px 10px 20px 10px;
+        background: #D8E3E7;
+        padding: 4px 10px 5px 10px;
         border-radius: 0 0 28px 28px;
+      
     }
     ion-card {
-        color: #2d334a;
+       // border: 5px solid #055052;
         width: 100%;
         border-radius: 14px;
         padding: 14px;
@@ -69,8 +130,8 @@ ion-content {
             width: 80px;
             height: 80px;
             border-radius: 50px;
-            background: #ff8e3c;
-            box-shadow: 7px 7px 20px #9b9ea0, -7px -7px 20px #ffffff;
+            background: #ffffff;
+            //box-shadow: 7px 7px 20px #9b9ea0, -7px -7px 20px #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
