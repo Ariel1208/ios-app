@@ -27,6 +27,7 @@ export class ApiResponseService {
     var newUrl = this.url+ 'validacionUsuario'
     return new Promise((resolve, reject) =>{
       this.http.post(newUrl,data).subscribe(data =>{
+        
           resolve (data);
       },error=>{
         if(error) throw error;
@@ -143,6 +144,19 @@ export class ApiResponseService {
     return new Promise((resolve, reject) =>{
       this.http.post(newUrl,data).subscribe(data =>{
           resolve (data);
+      },error=>{
+        if(error) throw error;
+      });
+    });
+  }
+
+  public getSectores(){
+    var newUrl = this.url+ 'buscarSectores';
+    return new Promise((resolve, reject) =>{
+      this.http.get(newUrl).subscribe(data =>{
+          console.log(data);
+          resolve (data);
+          
       },error=>{
         if(error) throw error;
       });

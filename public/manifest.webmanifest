@@ -1,8 +1,8 @@
 {
     "name": "Tianguiztli",
     "short_name": "Tianguiztli",
-    "theme_color": "#E6C500",
-    "background_color": "#E6C500",
+    "theme_color": "#053742",
+    "background_color": "#053742",
     "display": "standalone",
     "scope": "./",
     "start_url": "./",

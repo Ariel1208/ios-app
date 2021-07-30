@@ -31,7 +31,8 @@ const routes: Routes = [
   {
     path: 'app',
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
-  },  {
+  },
+  {
     path: 'buzon-quejas',
     loadChildren: () => import('./buzon-quejas/buzon-quejas.module').then( m => m.BuzonQuejasPageModule)
   },
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'informacion-empresa',
     loadChildren: () => import('./informacion-empresa/informacion-empresa.module').then( m => m.InformacionEmpresaPageModule)
+  },
+  {
+    path: 'actividades',
+    loadChildren: () => import('./mod-actividades/mod-actividades.module').then( m => m.ModActividadesPageModule)
   }
 
 

@@ -27,7 +27,7 @@ export class LoginAppPage implements OnInit {
   
   validarSesion(){
     if(window.localStorage.getItem("nombre")){
-      this.router.navigate(['inicio/'])
+      this.router.navigate(['app/tabs/inicio/'])
     }
   }
 
@@ -55,6 +55,7 @@ export class LoginAppPage implements OnInit {
           window.localStorage.setItem("id",res['id_usuario']); 
           window.localStorage.setItem("nombre",res['nombre']); 
           window.localStorage.setItem("mail",res['correo']); 
+          window.localStorage.setItem("mod_actividades",res['mod_actividades']); 
           window.localStorage.setItem("img",img); 
           this.router.navigate(['/app/tabs/inicio']);
         })
